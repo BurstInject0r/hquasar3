@@ -1,0 +1,65 @@
+<html lang="en">
+<%- include('../layouts/head') %>
+<body class="font-hqfont">
+
+<div>
+    <%- include('../layouts/sidebar') %>
+    <div id="content" class="content">
+        <div class="flex justify-center w-full">
+            <div class="xl:flex pt-8 shadow-lg p-">
+                <div class="sm:w-144 xl:w-80">
+                    <div class="bg-hqgray3-1000">
+                        <div class="flex justify-center pt-6">
+                            <img class="h-32 rounded-full"
+                                 src="https://azouaoui-med.github.io/pro-sidebar-template/src/img/user.jpg"
+                                 alt="nope">
+                        </div>
+                        <div class="text-center pt-3">
+                            <p class="text-2xl"><%= profile.username %></p>
+                            <p class="text-sm pt-1 pb-4"><%= profile.usergroup_str %></p>
+                        </div>
+                    </div>
+                    <div class="bg-hqgray3-1000 mt-4">
+                        <div class="p-3">
+                            <div class="sm:flex items-baseline">
+                                <div class="text-lg w-48">Discord</div>
+                                <div class="text-gray-400">Tarik#3642</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-hqgray3-1000 mt-4 xl:mt-0 xl:ml-4 w-full sm:w-144 py-4">
+                    <div class="mx-4 w-72 sm:w-144">
+                        <div class="sm:flex items-baseline">
+                            <div class="text-lg w-48">Username</div>
+                            <div class="text-gray-400"><%= profile.username %></div>
+                        </div>
+                        <hr class="sm:mr-8 my-4">
+                        <div class="sm:flex items-baseline">
+                            <div class="text-lg w-48">Joined</div>
+                            <div class="text-gray-400"><%= profile.createdAt.getUTCDate() + '-' + (profile.createdAt.getUTCMonth() + 1) + '-' + profile.createdAt.getUTCFullYear() + ' ' + profile.createdAt.getUTCHours() + ':' + profile.createdAt.getUTCMinutes() %></div>
+                        </div>
+                        <hr class="sm:mr-8 my-4">
+                        <div class="sm:flex items-baseline">
+                            <div class="text-lg w-48">Coins</div>
+                            <div class="text-gray-400"><%= profile.coins %></div>
+                        </div>
+                        <hr class="sm:mr-8 my-4">
+                        <div class="sm:flex items-baseline">
+                            <div class="text-lg w-48">Invited By</div>
+                            <div class="text-gray-400"> <%= profile.invited_by %> </div>
+                        </div>
+                        <hr class="sm:mr-8 my-4">
+                        <div class="sm:flex items-baseline">
+                            <div class="text-lg w-48">Last visit</div>
+                            <div class="text-gray-400">PLACEHOLDER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/particles.js"></script>
+</body>
+</html>

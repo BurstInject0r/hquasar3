@@ -1,0 +1,28 @@
+<html lang="en">
+<%- include('../layouts/head') %>
+
+<body class="bg-hqgray-1000 font-hqfont overflow-y-hidden">
+<div id="particles-js" class="h-screen">
+    <div class="absolute w-full">
+        <div class="border-b border-2 border-hqgreen-1000"></div>
+        <div class="w-9/12 m-auto py-16 min-h-screen flex items-center justify-center">
+            <div class="bg-white overflow-hidden pb-8 shadow-2xl bg-hqgray3-1000">
+                <div class="text-center pt-8">
+                    <h1 class="text-4xl py-5 text-hqgreen-1000">Banned!</h1>
+                    <p class="text-xl pb-8 px-12 text-white">You are banned from this website</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/particles.js"></script>
+<script>
+    const particlesJS = window.particlesJS;
+    particlesJS.load('particles-js', '/js/particlesjs-config.json', function () {
+        console.log('Loaded particles config');
+    });
+</script>
+</body>
+
+</html>

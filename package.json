@@ -1,0 +1,35 @@
+{
+  "name": "hquasar3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw:build": "npx tailwindcss build -i ./src/css/tailwind.css -o ./public/css/tailwind.css",
+    "tw:mini": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/css/tailwind.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "bcrypt": "^5.0.1",
+    "cssnano": "^5.0.6",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-recaptcha": "^5.0.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.2",
+    "nodemailer": "^6.6.3",
+    "particles.js": "^2.0.0",
+    "randomstring": "^1.2.1",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.2"
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../layouts/head') %>
+
+<body class="bg-hqgray-1000 text-white font-hqfont">
+<div id="particles-js" class="h-screen">
+    <div class="absolute w-full">
+        <div class="border-b border-2 border-hqgreen-1000"></div>
+        <div class="flex justify-center pt-36">
+            <div>
+                <div class="w-80 sm:w-96 text-sm shadow-2xl pb-1 bg-hqgray3-1000">
+                    <div class="flex justify-between">
+                        <a href="/login" class="ml-6 mt-4 text-xl cursor-pointer" id="login">Login</a>
+                        <a href="/register" class="mr-6 mt-4 text-xl cursor-pointer hq-textshadow"
+                           id="register">Register</a>
+                    </div>
+                    <div>
+                        <h1>
+
+                        </h1>
+                    </div>
+                    <div>
+                        <form action="" class="m-6" id="register-form" method="post">
+                            <label for="reg-username">Username</label>
+                            <input type="text" name="username" id="username" class="authInput" required>
+                            <% if (typeof username !== 'undefined') { %>
+                                <span class="text-hqred-1000"> <%= username %> </span>
+                            <% } %>
+                            <br>
+                            <br>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="authInput" required>
+                            <% if (typeof email !== 'undefined') { %>
+                                <span class="text-hqred-1000"> <%= email %> </span>
+                            <% } %>
+                            <br><br>
+                            <label for="invite">Invite Code</label>
+                            <input type="text" name="invite" id="invite" class="authInput" required>
+                            <% if (typeof invite !== 'undefined') { %>
+                                <span class="text-hqred-1000"> <%= invite %> </span>
+                            <% } %>
+                            <br><br>
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="authInput" required>
+                            <% if (typeof password !== 'undefined') { %>
+                                <span class="text-hqred-1000"> <%= password %> </span>
+                            <% } %>
+                            <br><br>
+                            <label for="password-confirm">Confirm Password</label>
+                            <input type="password" name="password_confirm" id="password-confirm" class="authInput" required>
+                            <% if (typeof password_confirm !== 'undefined') { %>
+                                <span class="text-hqred-1000"> <%= password_confirm %> </span>
+                            <% } %>
+                            <br><br>
+                            <input type="submit" value="Register" class="authButton">
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center pt-4">
+                    <p class="text-gray-500">Copyright <i class="far fa-copyright text-xs"></i> <%= new Date().getFullYear()%> - HQuasar.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/particles.js"></script>
+<script>
+    const particlesJS = window.particlesJS;
+    particlesJS.load('particles-js', 'js/particlesjs-config.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+</body>
+</html>

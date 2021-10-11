@@ -1,0 +1,23 @@
+<div class="px-2 sm:px-8 pt-2 sm:pt-8">
+    <div class="flex items-center border-b border-hqgray4-1000 pb-2">
+        <a href="/user/<%= user.username %>" class="text-4xl text-hqgreen-1000"><%= user.username %></a>
+        <p class="text-4xl px-2">|</p>
+        <p class="pt-2"><%= sitedata.selectedSettings%> </p>
+    </div>
+    <div>
+        <div class="flex pt-6">
+            <div class="pr-3">
+                <a href="/account/settings/general"
+                   class="border border-hqgreen-1000 p-2 bg-transparent w-full cursor-pointer text-gray-400 hover:text-white hover:bg-hqgreen-100">General</a>
+            </div>
+            <div class="pr-3">
+                <a href="/account/settings/password"
+                   class="border border-hqgreen-1000 p-2 bg-transparent w-full cursor-pointer text-gray-400 hover:text-white hover:bg-hqgreen-100">Password</a>
+            </div>
+            <div class="pr-3">
+                <a href="/account/settings/email"
+                   class="border border-hqgreen-1000 p-2 bg-transparent w-full cursor-pointer text-gray-400 hover:text-white hover:bg-hqgreen-100">Email</a>
+            </div>
+        </div>
+    </div>
+</div>

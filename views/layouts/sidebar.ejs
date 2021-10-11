@@ -1,0 +1,132 @@
+<div>
+    <div id="navbar" class="w-full h-14 md:h-16 bg-hqgray3-1000 fixed shadow-lg">
+        <div class="flex">
+            <div>
+                <a href="/">
+                    <img src="/hq.svg" alt="LOGO" class="h-8 m-4 md:hidden">
+                    <img src="/hquasar.svg" alt="LOGO" class="hidden h-9 m-4 md:block">
+                </a>
+            </div>
+            <div class="flex justify-end text-white w-full">
+                <div class="flex items-center cursor-pointer" onclick="toggleProfileLinks()">
+                    <div class="pr-4">
+                        <img src="https://azouaoui-med.github.io/pro-sidebar-template/src/img/user.jpg"
+                             alt="Profile Pic" class="h-8 md:h-9 rounded-full select-none">
+                    </div>
+                    <div class="flex pr-8 items-center">
+                        <div class="pr-3">
+                            <span><%= user.username %></span>
+                        </div>
+                        <div class="pt-1">
+                            <i id="profileLinksArrow" class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="profileLinks" class="absolute fixed w-40 collapsed bg-hqgray3-1000 mt-2"
+             style="right: 10px; display: none">
+
+            <div class="text-white">
+                <a href="/account/settings/general" class="flex p-2 hover:bg-hqgray-1000 focus:bg-hqgray-1000">Settings</a>
+            </div>
+
+            <div class="text-white">
+                <a href="/account/logout" class="flex p-2 hover:bg-hqred-100 focus:bg-hqred-200">Logout</a>
+            </div>
+
+        </div>
+    </div>
+    <div id="sidebar" class="bg-hqgray-1000 h-screen md:w-56 fixed transition duration-500 ease-out mt-14 md:mt-16">
+        <div class="text-white text-sm">
+            <ul>
+                <li class="pl-4 pt-3 pb-1"></li>
+
+                <!--- All nav links go here -->
+
+                <li class="sb-link m-2 md:m-3 <% if(typeof sitedata.selected !== 'undefined' && sitedata.selected === 'home'){ %>bg-hqgray3-1000<% } %> hover:bg-hqgray3-1000">
+                    <a href="/" class="flex items-center py-2 cursor-pointer md:pl-4">
+                        <div class="px-2 py-1 md:px-4 md:py-2 text-lg <% if(typeof sitedata.selected !== undefined && sitedata.selected === 'home'){ %>text-hqgreen-1000<% } %>">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="hidden md:block">
+                            <span class="pl-4">Home</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sb-link m-2 md:m-3 <% if(typeof sitedata.selected !== 'undefined' && sitedata.selected === 'invites'){ %>bg-hqgray3-1000<% } %> hover:bg-hqgray3-1000">
+                    <a href="/account/invites" class="flex items-center py-2 cursor-pointer md:pl-4">
+                        <div class="px-2 py-1 md:px-4 md:py-2 text-lg <% if(typeof sitedata.selected !== undefined && sitedata.selected === 'invites'){ %>text-hqgreen-1000<% } %>">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="hidden md:block">
+                            <span class="pl-4">Invites</span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="sb-link m-2 md:m-3 <% if(typeof sitedata.selected !== 'undefined' && sitedata.selected === 'account'){ %>bg-hqgray3-1000<% } %> hover:bg-hqgray3-1000">
+                    <a href="/account/overview" class="flex items-center py-2 cursor-pointer md:pl-4">
+                        <div class="px-2 py-1 md:px-4 md:py-2 text-lg <% if(typeof sitedata.selected !== undefined && sitedata.selected === 'account'){ %>text-hqgreen-1000<% } %>">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <div class="hidden md:block">
+                            <span class="pl-4">Account</span>
+                        </div>
+                    </a>
+                </li>
+
+                <!--                <li class="sb-dropdown m-2 md:m-3">
+                    <a class="flex items-center py-2 cursor-pointer md:pl-4">
+                        <div class="px-2 py-1 md:px-4 md:py-2 text-lg">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <div class="hidden md:block">
+                            <span class="pl-4">Account</span>
+                        </div>
+                        <div class="right-8 absolute hidden md:block">
+                            <i class="fas fa-angle-right rotate-90"></i>
+                        </div>
+                    </a>
+                    <div class="items" style="display: none">
+                        <ul class="pl-14 list-disc bg-hqgray2 py-2">
+                            <li class="py-2 hover:text-hqgreen">
+                                <a href="/user/<%= user.username %>" class="flex">My Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(function ($) {
+        $('.sb-dropdown > a').click(function () {
+            $('.items').slideUp(400);
+            if ($(this).parent().hasClass('active')) {
+                $('.sb-dropdown').removeClass('active');
+                $(this).parent().removeClass('active');
+                $(this).find('.fa-angle-right').removeClass('transform');
+            } else {
+                $('.sb-dropdown').removeClass('active');
+                $(this).next('.items').slideDown(400);
+                $(this).parent().addClass('active');
+                $(this).find('.fa-angle-right').addClass('transform');
+            }
+        });
+    });
+
+    jQuery(function ($) {
+        $('#sidebar-expand').click(function () {
+            $('#sidebar').removeClass('hidden');
+        })
+    });
+    jQuery(function ($) {
+        $('#sidebar-collapse').click(function () {
+            $('#sidebar').addClass('hidden');
+        })
+    });
+</script>
