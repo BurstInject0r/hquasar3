@@ -12,11 +12,14 @@ Account = new accountController();
 
 
 router.get('/account/overview', Account.index);
-router.get('/account/settings/general', Account.generalSettings)
-router.get('/account/settings/email', Account.emailSettings)
-router.get('/account/settings/password', Account.passwordSettings)
-router.get('/account/logout', Session.logout)
-router.get('/account/invites', Invite.index)
-router.get('/account/invites/create', Invite.create)
+router.get('/account/settings/general', Account.generalSettings);
+router.get('/account/settings/email', Account.emailSettings);
+router.get('/account/settings/security', Account.securitySettings);
+router.get('/account/logout', Session.logout);
+router.get('/account/invites', Invite.index);
+router.get('/account/invites/create', Invite.create);
+
+router.post('/account/settings/change_password', Account.changePassword)
+
 
 module.exports = router;

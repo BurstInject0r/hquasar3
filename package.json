@@ -25,7 +25,8 @@
     "nodemailer": "^6.6.3",
     "particles.js": "^2.0.0",
     "randomstring": "^1.2.1",
-    "sha1": "^1.1.1"
+    "sha1": "^1.1.1",
+    "tata-js": "^0.1.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
